@@ -1125,7 +1125,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     title: "第一步：AI 的現場勘查 (Research) 與藍圖規劃",
     contentHtml: `
       <h3>規劃模式啟動：調查管線與地基</h3>
-      <p class="intro-text">AI 拿到這個 `/goal` 任務後，自動進入規劃模式，分頭展開研究調查：</p>
+      <p class="intro-text">AI 拿到這個 <code>/goal</code> 任務後，自動進入規劃模式，分頭展開研究調查：</p>
       <div class="diagram-container">
         <div class="flow-step">
           <div class="flow-step-num">1</div>
