@@ -299,6 +299,7 @@ body {
 
 /* 2. Chapter Divider Layout */
 .layout-chapter {
+  text-align: center;
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
