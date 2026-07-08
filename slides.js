@@ -9,10 +9,6 @@ const slidesData = [
       <div class="layout-title">
         <h1 style="font-size: 3.2rem;">Antigravity 入門指南</h1>
         <p class="subtitle">用「裝修夢想房子」的白話文，帶你認識 Google DeepMind 開發的 AI 程式設計助手</p>
-        <div class="author-info">
-          <p>適合完全沒有基礎的初學者</p>
-          <p>協同開發的無重力體驗</p>
-        </div>
       </div>
     `
   },
@@ -207,7 +203,7 @@ const slidesData = [
       <p class="intro-text">沒有經驗的初學者，自己動手往往會遇到這三種尷尬場面：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>慘案 1：買錯材料 (套件衝突)</strong>：上網查了舊資料，下載了不相容的套件，搞得整個電腦發燙，程式還是不會動。</li>
-        <li><strong>慘案 2：接錯水電 (語法 Bug)</strong>：只要少了一個括號，終端機就會噴出 100 行紅色警告，讓人看著直發楞，不知從何修起。</li>
+        <li><strong>慘案 2：接錯水電 (語法 Bug)</strong>：單單少了一個括號，終端機就會噴出 100 行紅色警告，讓人看著直發楞，不知從何修起。</li>
         <li><strong>慘案 3：一拆牆整棟樓塌了 (程式改壞)</strong>：明明只改了一個小按鈕，結果購物車、登入功能全部失靈，又沒有存檔備份，欲哭無淚。</li>
       </ul>
     `
@@ -380,7 +376,7 @@ const slidesData = [
     contentHtml: `
       <div class="layout-chapter">
         <div class="chapter-num">PART 3</div>
-        <h2>規劃模式 (Planning Mode) 五部曲</h2>
+        <h2>第三部分：規劃模式 (Planning Mode) 五部曲</h2>
         <p>拆解 AI 設計師的工作 SOP。看他如何從敲定需求、畫藍圖，到施工、除錯和完工驗收。</p>
       </div>
     `
@@ -431,7 +427,7 @@ const slidesData = [
         </div>
         <div class="flow-step">
           <div class="flow-step-num">3</div>
-          <div class="flow-step-desc"><strong>階段三：業主簽名 (Approval)</strong> <span>將計畫書秀給你，等待你點擊「同意」或提出修改意見。</span></div>
+          <div class="flow-step-desc"><strong>階段三：業主簽名 (Approval)</strong> <span>將計畫書送交給你審查，等待你點擊「同意」或提出修改意見。</span></div>
         </div>
         <div class="flow-step">
           <div class="flow-step-num">4</div>
@@ -439,7 +435,7 @@ const slidesData = [
         </div>
         <div class="flow-step">
           <div class="flow-step-num">5</div>
-          <div class="flow-step-desc"><strong>階段五：驗收報告 (Verify)</strong> <span>測試功能是否正常，並提交完工報告 (walkthrough.md)。</span></div>
+          <div class="flow-step-desc"><strong>階段五：最後驗收 (Verify)</strong> <span>測試功能是否正常，並提交完工報告 (walkthrough.md)。</span></div>
         </div>
       </div>
     `
@@ -468,7 +464,7 @@ const slidesData = [
       <div class="split-layout">
         <div class="split-left">
           <h3>階段二：畫出實作計畫書</h3>
-          <p class="intro-text">勘查完畢後，AI 會在你家客廳桌上留下一份名為 <code>implementation_plan.md</code> 的計畫草稿：</p>
+          <p class="intro-text">勘查完畢後，AI 會在專案內部留下一份名為 <code>implementation_plan.md</code> 的計畫草稿：</p>
           <ul class="bullet-list">
             <li><strong>要動哪些牆</strong>：列出預計修改、新增或刪除的程式檔案。</li>
             <li><strong>施工詳情</strong>：說明大概會改寫哪幾個區塊的邏輯。</li>
@@ -481,7 +477,7 @@ const slidesData = [
             <p style="font-family: monospace; font-size: 0.85rem; background-color: var(--bg-secondary); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
               .gemini/antigravity/brain/.../implementation_plan.md
             </p>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">這份計畫是個「活藍圖」，施工前可以隨意塗改討論。</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">這份計畫是個「活藍圖」，施工前可以隨意修改討論。</p>
           </div>
         </div>
       </div>
@@ -589,7 +585,7 @@ const slidesData = [
     `
   },
 
-  // PART 4: 核心工具箱 (25-32)
+  // PART 4: 核心工具箱 (25-31)
   {
     id: 25,
     section: "核心工具箱",
@@ -627,10 +623,10 @@ const slidesData = [
       <div class="split-layout">
         <div class="split-left">
           <h3>威力強大的電鑽：指令執行</h3>
-          <p class="intro-text"><code>run_command</code> 是 AI 的電鑽，可以在你的終端機裡鑽孔、開洞、打地基：</p>
+          <p class="intro-text"><code>run_command</code> 是 AI 的電鑽，可以在你的終端機裡安裝套件、編譯運行：</p>
           <ul class="bullet-list">
             <li><strong>功能</strong>：幫你下載套件、啟動本地網頁伺服器。</li>
-            <li><strong>安全防護</strong>：因為電鑽很危險（比如亂下格式化磁碟的指令），所以<b>每一次使用電鑽，AI 都必須跳出提示請求你點擊授權</b>。</li>
+            <li><strong>安全防護</strong>：因為電鑽很危險，所以<b>每一次使用電鑽，AI 都必須跳出提示請求你點擊授權</b>。</li>
           </ul>
         </div>
         <div class="split-right">
@@ -733,12 +729,12 @@ const slidesData = [
     id: 32,
     section: "快速斜線指令",
     layout: "chapter",
-    title: "第五部分：快速斜線指令 (Slash Commands)",
+    title: "第五部分：快速斜線指令與寫 Prompt 技巧",
     contentHtml: `
       <div class="layout-chapter">
         <div class="chapter-num">PART 5</div>
-        <h2>第五部分：快速斜線指令 (Slash Commands)</h2>
-        <p>你與 AI 設計師之間的「秘密手勢」。輸入一個斜線，就能開啟神奇的特種服務！</p>
+        <h2>第五部分：快速斜線指令與寫 Prompt 技巧</h2>
+        <p>學會與 AI 溝通的「秘密口訣」。不僅教你指令的功能，更教你如何精準下達 Prompt 參數取得完美產出。</p>
       </div>
     `
   },
@@ -746,22 +742,25 @@ const slidesData = [
     id: 33,
     section: "快速斜線指令",
     layout: "split-content",
-    title: "/goal 指令：大統包工程，做完才准下班",
+    title: "/goal 指令與下 Prompt 技巧",
     contentHtml: `
       <div class="split-layout">
         <div class="split-left">
           <h3>/goal：包到好工程模式</h3>
-          <p class="intro-text">一般情況下，AI 做完一步就會停下來問你。但如果你要出門旅行，想把整個廚房裝修全權委託給它：</p>
-          <ul class="bullet-list">
-            <li><strong>統包委託</strong>：輸入 <code>/goal</code>，設定最終目標（如：蓋出整套購物功能並測試通過）。</li>
-            <li><strong>不打擾自主執行</strong>：AI 會自動一步接一步幹活、遇到 Bug 自己修，不發送 Proceed 打擾你，直到完全蓋好才通知你。</li>
+          <p class="intro-text">讓 AI 進入全自動開發，不中斷詢問直到成功為止。</p>
+          <p>✍️ <b>Prompt 下法公式</b>：<br>
+          <code style="color: var(--accent-secondary);">/goal [具體目標] + [限制條件] + [驗收標準]</code></p>
+          <ul class="bullet-list" style="margin-top: 0.5rem;">
+            <li><strong>不好的下法</strong>：<code>/goal 幫我改好首頁</code> (太模糊，AI 不知道怎麼驗收)。</li>
+            <li><strong>完美的 Prompt 範例</strong>：<br>
+            <code>/goal 幫我把首頁的登入按鈕改為毛玻璃樣式，字體改為微軟正黑體，並確保點擊後能順利開啟 login.html，最後執行 npm test 驗證沒有任何排版錯誤。</code></li>
           </ul>
         </div>
         <div class="split-right">
           <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
-            <h4><span class="card-icon">🏁</span> 白話指令範例</h4>
-            <p style="font-family: monospace; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.5;">
-              <b>/goal</b> 幫我把這個專案的會員登入介面，從簡陋的純文字修改成包含 Google 登入的毛玻璃炫彩畫面，並保證點擊後能跳轉。
+            <h4><span class="card-icon">💡</span> 為什麼要這樣下？</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              給予明確的<b>「起點、終點與驗證方法」</b>，AI 才能在背景反覆嘗試修復 Bug，直到測試完全綠燈才會把最終成果呈獻給您。
             </p>
           </div>
         </div>
@@ -772,24 +771,25 @@ const slidesData = [
     id: 34,
     section: "快速斜線指令",
     layout: "split-content",
-    title: "/grill-me 指令：設計師對你的「需求大拷問」",
+    title: "/grill-me 指令與下 Prompt 技巧",
     contentHtml: `
       <div class="split-layout">
         <div class="split-left">
-          <h3>/grill-me：靈魂拷問防做白工</h3>
-          <p class="intro-text">業主常常說：<i>「幫我加個聊天室，謝謝。」</i>但沒講聊天室要幾個人用、能不能傳圖片。這時候可以用 <code>/grill-me</code>：</p>
-          <ul class="bullet-list">
-            <li><strong>設計師反問</strong>：AI 會變身成嚴格的專案經理，列出 3 個問題拷問你。</li>
-            <li><strong>對齊需求</strong>：釐清你的設計規格，防止寫了一堆代碼結果全做白工。</li>
+          <h3>/grill-me：需求大拷問</h3>
+          <p class="intro-text">讓 AI 變身 PM 反過來考問你，避免你因為需求講得太含糊而做白工。</p>
+          <p>✍️ <b>Prompt 下法公式</b>：<br>
+          <code style="color: var(--accent-secondary);">/grill-me [預計開發的大目標] + [已知背景]</code></p>
+          <ul class="bullet-list" style="margin-top: 0.5rem;">
+            <li><strong>不好的下法</strong>：<code>/grill-me 我想做個網站。</code> (沒有主軸，AI 無從問起)。</li>
+            <li><strong>完美的 Prompt 範例</strong>：<br>
+            <code>/grill-me 我預計為貓咪咖啡廳網頁加上「線上預約貓咪互動時段」的功能，有基本的日期選擇，請拷問我細節。</code></li>
           </ul>
         </div>
         <div class="split-right">
-          <div class="info-card" style="border-left: 4px solid var(--accent-secondary);">
-            <h4><span class="card-icon">💬</span> 模擬拷問現場</h4>
+          <div class="info-card">
+            <h4><span class="card-icon">💬</span> 對答機制</h4>
             <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
-              <b>AI:</b> 「為了幫你蓋好聊天室，請回答以下 2 個問題：<br>
-              1. 聊天訊息要永久儲存，還是關掉瀏覽器就消失？<br>
-              2. 需要有『已讀』功能嗎？」
+              輸入後，AI 會列出多選題或問答題，例如詢問：「是否需要限定每人預約次數？」、「預約額滿時如何顯示？」。你回答後它才會正式寫進計畫書。
             </p>
           </div>
         </div>
@@ -800,23 +800,25 @@ const slidesData = [
     id: 35,
     section: "快速斜線指令",
     layout: "split-content",
-    title: "/browser 指令：打開瀏覽器，幫我看看排版",
+    title: "/browser 指令與下 Prompt 技巧",
     contentHtml: `
       <div class="split-layout">
         <div class="split-left">
-          <h3>/browser：模擬實境除錯</h3>
-          <p class="intro-text">寫網頁最怕「跑版」或「按鈕按不下去」。AI 沒有螢幕，它要怎麼驗收？</p>
-          <ul class="bullet-list">
-            <li><strong>啟動無頭瀏覽器</strong>：AI 會在背景打開一個隱藏的 Chrome 瀏覽器。</li>
-            <li><strong>自動點擊</strong>：它會幫你點點看按鈕、模擬滑鼠捲動。</li>
-            <li><strong>拍照錄影</strong>：它會把瀏覽器的畫面拍下來自己看，檢查有沒有字體重疊或按鈕壞掉，並當場修改。</li>
+          <h3>/browser：網頁視覺自動測試</h3>
+          <p class="intro-text">讓 AI 打開無頭瀏覽器，模擬真人操作點擊並截圖除錯。</p>
+          <p>✍️ <b>Prompt 下法公式</b>：<br>
+          <code style="color: var(--accent-secondary);">/browser [目標網址] + [點擊/輸入步驟] + [截圖驗證要求]</code></p>
+          <ul class="bullet-list" style="margin-top: 0.5rem;">
+            <li><strong>不好的下法</strong>：<code>/browser 打開首頁看看。</code> (沒有動作指示)。</li>
+            <li><strong>完美的 Prompt 範例</strong>：<br>
+            <code>/browser 打開 http://localhost:3000，在帳號輸入框填入 test@gmail.com，密碼填 123456，點擊登入按鈕，並截圖確認是否成功跳轉到 /dashboard 頁面。</code></li>
           </ul>
         </div>
         <div class="split-right">
           <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
-            <h4><span class="card-icon">🌐</span> 白話指令範例</h4>
-            <p style="font-family: monospace; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.5;">
-              <b>/browser</b> 打開首頁，幫我看看用手機模式觀看時，上方的導覽列會不會太擠，如果會的話，幫我改成漢堡選單。
+            <h4><span class="card-icon">📷</span> 視覺除錯的威力</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              AI 會回傳瀏覽器的實際運行畫面，如果發現有任何排版擠在一起或按鈕點了沒反應，它會讀懂圖片並主動回頭修改 CSS 程式碼！
             </p>
           </div>
         </div>
@@ -827,22 +829,55 @@ const slidesData = [
     id: 36,
     section: "快速斜線指令",
     layout: "split-content",
-    title: "/learn 指令：記住我的怪癖 (不要再叫我改了)",
+    title: "/learn 指令與下 Prompt 技巧",
     contentHtml: `
       <div class="split-layout">
         <div class="split-left">
-          <h3>/learn：養成專屬默契</h3>
-          <p class="intro-text">如果你每次開工，都要重新跟工人叮嚀：「我討厭粉紅色」、「我習慣用 JSDoc」，會很心累。</p>
-          <ul class="bullet-list">
-            <li><strong>寫入備忘錄</strong>：輸入 <code>/learn</code>，AI 會把你的偏好永久寫進它的筆記本中。</li>
-            <li><strong>永久生效</strong>：以後每次新對話，它都會主動遵守，不需要你重複碎碎念。</li>
+          <h3>/learn：讓 AI 永久記住你的習慣</h3>
+          <p class="intro-text">把特定的偏好寫入 AI 的長期記憶，避免開新對話後它又忘記。</p>
+          <p>✍️ <b>Prompt 下法公式</b>：<br>
+          <code style="color: var(--accent-secondary);">/learn [特定的編碼習慣/技術框架要求/專案禁忌]</code></p>
+          <ul class="bullet-list" style="margin-top: 0.5rem;">
+            <li><strong>不好的下法</strong>：<code>/learn 我不喜歡紅色。</code> (太主觀，AI 很難在寫程式時衡量)。</li>
+            <li><strong>完美的 Prompt 範例</strong>：<br>
+            <code>/learn 記住！本專案的變數名稱一律採用底線命名 (snake_case)，所有的 API 接口必須使用 JSON 格式回傳，且程式碼中的註解一律必須使用繁體中文。</code></li>
           </ul>
         </div>
         <div class="split-right">
           <div class="info-card">
-            <h4><span class="card-icon">🧠</span> 白話指令範例</h4>
-            <p style="font-family: monospace; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.5;">
-              <b>/learn</b> 請記住我這個專案一律不使用任何第三方樣式庫，只使用純 CSS 寫版面，且必須相容 RWD 手機版。
+            <h4><span class="card-icon">🧠</span> 記憶寫入位置</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              這會直接被寫入專案的客製化規則設定檔中。下次當它要幫你改程式時，它在起步階段就會把這條規則載入為基本法規。
+            </p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 37,
+    section: "快速斜線指令",
+    layout: "split-content",
+    title: "/schedule 指令與下 Prompt 技巧",
+    contentHtml: `
+      <div class="split-layout">
+        <div class="split-left">
+          <h3>/schedule：定時自動排程</h3>
+          <p class="intro-text">讓 AI 幫你定一個定時鬧鐘去背景執行任務，不用人在旁邊守著。</p>
+          <p>✍️ <b>Prompt 下法公式</b>：<br>
+          <code style="color: var(--accent-secondary);">/schedule CronExpression="[時間]" Prompt="[具體任務]"</code></p>
+          <ul class="bullet-list" style="margin-top: 0.5rem;">
+            <li><strong>完美的一次性計時器 Prompt</strong>：<br>
+            <code>/schedule DurationSeconds=300 Prompt="跑跑看本地測試伺服器，看看 5 分鐘後它會不會崩潰漏水"</code></li>
+            <li><strong>完美的週期性定時 Prompt</strong>：<br>
+            <code>/schedule CronExpression="0 9 * * *" Prompt="每天早上 9 點自動把專案更新推送到 GitHub，並執行一次程式健康檢查"</code></li>
+          </ul>
+        </div>
+        <div class="split-right">
+          <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
+            <h4><span class="card-icon">⏰</span> 免死等機制</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              排程設定完成後，AI 就會進入休眠。時間到時，系統會自動發送通知喚醒它，它會默默在背景跑完，並把日誌結果寫在對話中通知你。
             </p>
           </div>
         </div>
@@ -850,9 +885,9 @@ const slidesData = [
     `
   },
 
-  // PART 6: 子代理人與團隊協作 (37-41)
+  // PART 6: 子代理人與團隊協作 (38-42)
   {
-    id: 37,
+    id: 38,
     section: "子代理人與團隊協作",
     layout: "chapter",
     title: "第六部分：分包工頭與分工團隊 (Subagents)",
@@ -865,7 +900,7 @@ const slidesData = [
     `
   },
   {
-    id: 38,
+    id: 39,
     section: "子代理人與團隊協作",
     layout: "split-content",
     title: "什麼是子代理人？請分包小組來幫忙",
@@ -892,7 +927,7 @@ const slidesData = [
     `
   },
   {
-    id: 39,
+    id: 40,
     section: "子代理人與團隊協作",
     layout: "bullets",
     title: "內建小助手 1：research (跑腿資料庫專家)",
@@ -907,7 +942,7 @@ const slidesData = [
     `
   },
   {
-    id: 40,
+    id: 41,
     section: "子代理人與團隊協作",
     layout: "bullets",
     title: "內建小助手 2：self (在隔壁小空地試畫的分身)",
@@ -922,7 +957,7 @@ const slidesData = [
     `
   },
   {
-    id: 41,
+    id: 42,
     section: "子代理人與團隊協作",
     layout: "split-content",
     title: "如何呼叫自訂分包工頭？define_subagent",
@@ -956,9 +991,9 @@ const slidesData = [
     `
   },
 
-  // PART 7: 客製化規章 (42-45)
+  // PART 7: 客製化規章 (43-46)
   {
-    id: 42,
+    id: 43,
     section: "客製化設定",
     layout: "chapter",
     title: "第七部分：客製化規章 (Customizations)",
@@ -971,7 +1006,7 @@ const slidesData = [
     `
   },
   {
-    id: 43,
+    id: 44,
     section: "客製化設定",
     layout: "split-content",
     title: "工人守則與獨門絕活：AGENTS.md 與 Skills",
@@ -1000,7 +1035,7 @@ const slidesData = [
     `
   },
   {
-    id: 44,
+    id: 45,
     section: "客製化設定",
     layout: "code-mockup",
     title: "寫下你的絕活 SOP：SKILL.md 寫法",
@@ -1027,7 +1062,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     `
   },
   {
-    id: 45,
+    id: 46,
     section: "客製化設定",
     layout: "bullets",
     title: "工人守則 (AGENTS.md)：工人們必須遵守的法律",
@@ -1042,22 +1077,245 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     `
   },
 
-  // PART 8: 最佳實踐與總結 (46-52)
+  // PART 8: 實戰案例 - 臺灣三大報輿情簡報 (47-54)
   {
-    id: 46,
-    section: "最佳實踐與總結",
+    id: 47,
+    section: "輿情 Word 輸出實戰案例",
     layout: "chapter",
-    title: "第八部分：初學者施工金律與總結",
+    title: "第八部分：實戰案例：三大報輿情簡報與 Word 輸出",
     contentHtml: `
       <div class="layout-chapter">
         <div class="chapter-num">PART 8</div>
-        <h2>第八部分：初學者施工金律與總結</h2>
+        <h2>第八部分：實戰案例：三大報輿情簡報與 Word 輸出</h2>
+        <p>以最貼近台灣本土開發情境的真實任務，手把手帶你看 AI 代理人如何拆解任務、自動除錯並產出 Word 成果檔案。</p>
+      </div>
+    `
+  },
+  {
+    id: 48,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "split-content",
+    title: "任務場景：老闆要看台灣三大報輿情",
+    contentHtml: `
+      <div class="split-layout">
+        <div class="split-left">
+          <h3>老闆的每日需求</h3>
+          <p class="intro-text">公關部門每天早上 9 點前，必須送交一份關於「人工智慧 (AI) 科技政策」的台灣三大報紙輿情簡報，並輸出成 Word 檔給老闆看。</p>
+          <ul class="bullet-list">
+            <li><strong>來源</strong>：自由時報、聯合報、中國時報。</li>
+            <li><strong>內容</strong>：搜集當日最新頭條，抓出摘要。</li>
+            <li><strong>產出</strong>：格式精美、能直接列印的 <code>.docx</code> Word 檔案。</li>
+          </ul>
+        </div>
+        <div class="split-right">
+          <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
+            <h4><span class="card-icon">⚡</span> 業主（你）下達的 Prompt</h4>
+            <p style="font-family: monospace; font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              <b>/goal</b> 幫我用 Python 開發一個每日輿情抓取系統，自動搜集自由時報、聯合報、中時電子報上有關「人工智慧」的新聞。摘要整理後，套用精美的中文排版格式，輸出成一個 docx 簡報檔。
+            </p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 49,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "diagram",
+    title: "第一步：AI 的現場勘查 (Research) 與藍圖規劃",
+    contentHtml: `
+      <h3>規劃模式啟動：調查管線與地基</h3>
+      <p class="intro-text">AI 拿到這個 `/goal` 任務後，自動進入規劃模式，分頭展開研究調查：</p>
+      <div class="diagram-container">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-desc">
+            <strong>檢查本地資源 (view_file)</strong>
+            <span>確認你電腦上有沒有安裝 Python 3、pip，以及是否有寫好的 crawler 腳本可以參考。</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-desc">
+            <strong>網路搜集文獻 (search_web)</strong>
+            <span>去 Google 搜尋自由時報、聯合報、中時電子報目前的新聞搜尋 API 或 HTML DOM 結構，避免網頁改版導致爬蟲失效。</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-desc">
+            <strong>提出實作計畫書 (implementation_plan.md)</strong>
+            <span>寫下計畫：預計建立 crawler.py、writer.py，並使用 python-docx 做 Word 排版。等待你按「同意」。</span>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 50,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "split-content",
+    title: "第二步：派遣「資料專家子代理人」去背景爬網頁",
+    contentHtml: `
+      <div class="split-layout">
+        <div class="split-left">
+          <h3>多代理人分工：大設計師與跑腿工頭</h3>
+          <p class="intro-text">因為要同時連線到三個截然不同的報紙網站，主 AI 叫了分身：</p>
+          <ul class="bullet-list">
+            <li><strong>呼叫 subagent</strong>：主 AI 建立了一個名為 <code>news_scraping_agent</code> 的專職爬蟲子代理人。</li>
+            <li><strong>背景默默耕耘</strong>：子代理人在背景用 <code>search_web</code> 和 <code>read_url_content</code> 讀取三大報網頁，並測試 HTML 標籤抓取邏輯，把撈到的新聞乾淨整理好，大設計師則繼續在前端撰寫 Python 主程式。</li>
+          </ul>
+        </div>
+        <div class="split-right">
+          <div class="code-mockup">
+            <div class="code-header">
+              <div class="code-dots"><div class="code-dot dot-red"></div><div class="code-dot dot-yellow"></div><div class="code-dot dot-green"></div></div>
+              <span class="code-title">子代理人通信內容</span>
+            </div>
+            <div class="code-body" style="font-size: 0.75rem; line-height: 1.4;">
+              <span class="code-comment"># subagent -> 主 AI</span><br>
+              我已成功抓取資料：<br>
+              - 自由: 抓到 3 篇，標籤定位 ok<br>
+              - 聯合: 抓到 2 篇，有阻擋機制但以繞過<br>
+              - 中時: 抓到 4 篇，DOM 讀取 ok
+            </div>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 51,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "code-mockup",
+    title: "第三步：照表施工 (Execute) 與寫入檔案",
+    contentHtml: `
+      <div class="code-mockup">
+        <div class="code-header">
+          <div class="code-dots"><div class="code-dot dot-red"></div><div class="code-dot dot-yellow"></div><div class="code-dot dot-green"></div></div>
+          <span class="code-title">writer.py (自動編寫 Word 格式邏輯)</span>
+        </div>
+        <div class="code-body" style="font-size: 0.75rem;">
+<span class="code-keyword">import</span> docx
+<span class="code-keyword">from</span> docx.shared <span class="code-keyword">import</span> Pt, RGBColor
+
+doc = docx.Document()
+<span class="code-comment"># 設定台灣企業偏好的新細明體與標楷體字型</span>
+style = doc.styles['Normal']
+font = style.font
+font.name = <span class="code-string">'PMingLiU'</span>  <span class="code-comment"># 新細明體</span>
+font.size = Pt(<span class="code-number">12</span>)
+
+doc.add_heading(<span class="code-string">'今日台灣三大報人工智慧輿情簡報'</span>, level=<span class="code-number">0</span>)
+<span class="code-comment"># 動態塞入爬蟲抓到的三大報新聞標題與大綱...</span>
+doc.save(<span class="code-string">'AI_Newspaper_Report.docx'</span>)
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">
+        💡 AI 主動寫入 python-docx 邏輯，並設定字體尺寸、行距，確保輸出格式符合公務簡報要求。
+      </p>
+    `
+  },
+  {
+    id: 52,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "split-content",
+    title: "第四步：水電工大顯身手：指令執行與權限核准",
+    contentHtml: `
+      <div class="split-layout">
+        <div class="split-left">
+          <h3>安裝必要電鑽：python-docx</h3>
+          <p class="intro-text">寫完程式後，AI 要執行它，但你的電腦裡還沒有安裝 python-docx 套件。</p>
+          <ul class="bullet-list">
+            <li><strong>AI 提議指令</strong>：AI 會主動下達 <code>pip install python-docx beautifulsoup4</code> 指令。</li>
+            <li><strong>等待授權</strong>：對話視窗跳出黃色警示，等待你的確認。你點擊「允許 (Proceed)」，電鑽隨之啟動，將套件下載安裝完畢。</li>
+          </ul>
+        </div>
+        <div class="split-right">
+          <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
+            <h4><span class="card-icon">🔑</span> 安全提醒</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              安裝套件是系統指令，所以在你點擊同意前，AI 的電鑽是鎖死的，絕對不可能在背景偷偷安裝來路不明的惡意程式。
+            </p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 53,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "code-mockup",
+    title: "第五步：自我除錯迴圈 (Self-healing) 拯救亂碼危機",
+    contentHtml: `
+      <div class="code-mockup">
+        <div class="code-header">
+          <div class="code-dots"><div class="code-dot dot-red"></div><div class="code-dot dot-yellow"></div><div class="code-dot dot-green"></div></div>
+          <span class="code-title">自動捕獲台灣 Windows 繁中編碼錯誤</span>
+        </div>
+        <div class="code-body" style="font-size: 0.72rem; line-height: 1.4;">
+<span style="color: #ef4444;">UnicodeDecodeError: 'cp950' codec can't decode byte 0xe4 in position 12...</span>
+
+<span class="code-comment"># AI 瞬間分析：</span>
+「這是因為台灣 Windows 預設使用 CP950 編碼，而爬蟲抓下來的網頁資料是 UTF-8。」
+<span class="code-comment"># AI 自動修正程式碼：</span>
+- with open('news.txt', 'r') as f:
++ with open('news.txt', 'r', <span class="code-highlight">encoding='utf-8'</span>) as f:
+
+<span class="code-string">重新執行 python main.py ➔ 順利通過，無錯誤！</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-secondary);">
+        💡 如果是初學者，遇到 CP950 編碼錯誤通常會卡關查 Google 兩小時。而 AI 在 3 秒內自動完成捕獲與自我修正！
+      </p>
+    `
+  },
+  {
+    id: 54,
+    section: "輿情 Word 輸出實戰案例",
+    layout: "split-content",
+    title: "第六步：完美完工驗收與 Word 檔案下載",
+    contentHtml: `
+      <div class="split-layout">
+        <div class="split-left">
+          <h3>驗收與拿走你的 docx 成果</h3>
+          <p class="intro-text">爬蟲成功，資料整理完畢，Word 文件也存檔了！</p>
+          <ul class="bullet-list">
+            <li><strong>自動健康檢查</strong>：AI 自行執行測試，確認 Word 檔內有文字、段落標記正確，沒有空頁。</li>
+            <li><strong>完工報告</strong>：在對話框遞交 <code>walkthrough.md</code>。</li>
+            <li><strong>一鍵下載</strong>：報告中會附上超連結，你只需輕輕一點，就能將做好的 <code>AI_Newspaper_Report.docx</code> 下載打開，列印出來呈送給老闆！</li>
+          </ul>
+        </div>
+        <div class="split-right">
+          <div class="info-card" style="border-left: 4px solid var(--accent-secondary); width: 100%;">
+            <h4><span class="card-icon">📄</span> 輿情成果 Word 特色</h4>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
+              - <b>分類明確</b>：區分自由、聯合、中時專欄。<br>
+              - <b>重點加粗</b>：關鍵字「AI政策」加粗變色。<br>
+              - <b>一鍵生成</b>：完全由 AI 主動開發與部署，你只打了一行 Prompt。
+            </p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+
+  // PART 9: 客製化設定 (55-58)
+  {
+    id: 55,
+    section: "最佳實踐與總結",
+    layout: "chapter",
+    title: "第九部分：初學者施工金律與總結",
+    contentHtml: `
+      <div class="layout-chapter">
+        <div class="chapter-num">PART 9</div>
+        <h2>第九部分：初學者施工金律與總結</h2>
         <p>學會如何做好一個「甩手業主」。掌握 5 大施工金律，並學會當 AI 設計師卡住時的解決辦法。</p>
       </div>
     `
   },
   {
-    id: 47,
+    id: 56,
     section: "最佳實踐與總結",
     layout: "bullets",
     title: "做個聰明業主的 5 大施工金律",
@@ -1065,7 +1323,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
       <h3>如何發揮 AI 設計師的最大威力？</h3>
       <p class="intro-text">記住這五條工地金律，保證你不會蓋出危樓：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>金律 1：大別墅拆成小房間蓋</strong>。不要叫 AI 「蓋一個淘寶網站」。應該先叫它「設計商品卡片樣式」，分小步執行。</li>
+        <li><strong>金律 1：大別墅拆成小房間蓋</strong>。不要叫 AI 「蓋一個淘寶網站」。應該先叫它「設計商品大綱與按鈕」，分小步執行。</li>
         <li><strong>金律 2：簽名（Proceed）前看一眼藍圖</strong>。確認它要動的檔案是不是你預期的那幾個。</li>
         <li><strong>金律 3：多拷問（/grill-me）</strong>。當需求不夠清楚，讓 AI 來拷問你，把細節寫成規格再施工。</li>
         <li><strong>金律 4：記錄你的習慣（/learn）</strong>。解決一個 Bug 後，讓 AI 把經驗記在備忘錄中。</li>
@@ -1074,7 +1332,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     `
   },
   {
-    id: 48,
+    id: 57,
     section: "最佳實踐與總結",
     layout: "split-content",
     title: "常見問題：施工到一半卡住了怎麼辦？",
@@ -1101,7 +1359,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     `
   },
   {
-    id: 49,
+    id: 58,
     section: "最佳實踐與總結",
     layout: "split-content",
     title: "從「動手寫代碼」到「指揮 AI 寫代碼」",
@@ -1129,7 +1387,7 @@ description: "清理工地多餘的垃圾材料與備份檔"<br>
     `
   },
   {
-    id: 50,
+    id: 59,
     section: "最佳實踐與總結",
     layout: "title",
     title: "開啟你的無重力程式裝修之旅吧！",
