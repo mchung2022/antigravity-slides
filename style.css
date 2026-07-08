@@ -1,0 +1,952 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* --- 變數定義 (設計系統) --- */
+:root {
+  /* 深色模式變數 (預設) */
+  --bg-primary: #090d16;
+  --bg-secondary: #111827;
+  --card-bg: rgba(17, 24, 39, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --accent-primary: #6366f1; /* Indigo */
+  --accent-secondary: #10b981; /* Emerald */
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --shadow-main: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --scrollbar-thumb: #374151;
+  --header-bg: rgba(9, 13, 22, 0.8);
+  --sidebar-bg: rgba(17, 24, 39, 0.95);
+  
+  --font-heading: 'Outfit', 'Noto Sans TC', sans-serif;
+  --font-body: 'Noto Sans TC', sans-serif;
+  --transition-speed: 0.4s;
+  --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  /* 淺色模式變數 */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent-primary: #4f46e5;
+  --accent-secondary: #059669;
+  --accent-glow: rgba(79, 70, 229, 0.1);
+  --shadow-main: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --scrollbar-thumb: #cbd5e1;
+  --header-bg: rgba(248, 250, 252, 0.8);
+  --sidebar-bg: rgba(255, 255, 255, 0.98);
+}
+
+/* --- 重設與基礎樣式 --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  transition: background-color var(--transition-speed) var(--transition-curve),
+              color var(--transition-speed) var(--transition-curve);
+}
+
+/* --- 主介面版面配置 --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* --- 頁首導覽列 --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  z-index: 10;
+  height: 70px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-badge {
+  font-size: 0.7rem;
+  background-color: var(--accent-glow);
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background-color: var(--card-bg);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* --- 簡報主視窗 --- */
+.slides-viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  max-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- 投影片卡片 --- */
+.slide-card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-main);
+  backdrop-filter: blur(16px);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s var(--transition-curve), opacity 0.5s var(--transition-curve);
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+}
+
+.slide-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 裝飾背景漸變球 */
+.slide-card::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  border-bottom: 1px dashed var(--card-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-section-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  background-color: var(--accent-glow);
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+}
+
+.slide-index-tag {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* --- 投影片排版樣式 --- */
+
+/* 1. Title Layout */
+.layout-title {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.layout-title h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.layout-title .subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+}
+
+.layout-title .author-info {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--card-border);
+  padding-top: 1rem;
+  width: 250px;
+}
+
+/* 2. Chapter Divider Layout */
+.layout-chapter {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.layout-chapter .chapter-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.layout-chapter h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.layout-chapter p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* 3. General Slide Headings */
+.slide-content h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.slide-content h3::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 1.8rem;
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+  border-radius: 4px;
+}
+
+.slide-content p.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* 4. Split Layout (Two Columns) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  height: 100%;
+}
+
+.split-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 5. Bullet List Layout */
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bullet-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0.25rem;
+  color: var(--accent-secondary);
+  font-weight: bold;
+}
+
+.bullet-list li strong {
+  color: var(--text-primary);
+}
+
+.bullet-list li:hover {
+  transform: translateX(4px);
+  color: var(--text-primary);
+}
+
+/* 6. Card Grid (for comparisons or lists) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.info-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.info-card:hover {
+  background-color: var(--accent-glow);
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+}
+
+.info-card h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-card h4 .card-icon {
+  color: var(--accent-primary);
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* 7. Code Mockup Layout */
+.code-mockup {
+  width: 100%;
+  background-color: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  font-family: 'Consolas', 'Fira Code', monospace;
+  text-align: left;
+}
+
+.code-header {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.code-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background-color: #ef4444; }
+.dot-yellow { background-color: #f59e0b; }
+.dot-green { background-color: #10b981; }
+
+.code-title {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.code-body {
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.code-comment { color: #64748b; }
+.code-keyword { color: #818cf8; }
+.code-string { color: #34d399; }
+.code-function { color: #fb7185; }
+.code-highlight {
+  background-color: rgba(99, 102, 241, 0.15);
+  border-left: 2px solid var(--accent-primary);
+  display: block;
+  padding-left: 4px;
+}
+
+/* 8. Diagram Layouts */
+.diagram-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,0.02);
+  border: 1px dashed var(--card-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.flow-step-num {
+  width: 28px;
+  height: 28px;
+  background-color: var(--accent-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-right: 1rem;
+}
+
+.flow-step-desc {
+  flex: 1;
+}
+
+.flow-step-desc strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.flow-step-desc span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* 9. Large Stats Layout */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--accent-glow);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  flex: 1;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* --- 頁尾導覽與進度條 --- */
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--card-border);
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+  height: 70px;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-nav {
+  background-color: var(--accent-primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.btn-nav:hover {
+  background-color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-nav:disabled {
+  background-color: var(--card-border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.nav-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.progress-container {
+  flex: 1;
+  max-width: 500px;
+  height: 6px;
+  background-color: var(--card-border);
+  border-radius: 10px;
+  margin: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-indicator {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* --- 側邊欄大綱 (Outline Sidebar) --- */
+.outline-sidebar {
+  position: absolute;
+  top: 70px;
+  right: -350px;
+  width: 350px;
+  height: calc(100% - 140px);
+  background-color: var(--sidebar-bg);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid var(--card-border);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 15;
+  transition: right 0.4s var(--transition-curve);
+  display: flex;
+  flex-direction: column;
+}
+
+.outline-sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.25rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+.sidebar-list {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.sidebar-item {
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--accent-glow);
+}
+
+.sidebar-item.active {
+  background-color: var(--accent-glow);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.sidebar-item-num {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background-color: var(--accent-glow);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  margin-top: 0.1rem;
+}
+
+.sidebar-item-info {
+  flex: 1;
+}
+
+.sidebar-item-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.sidebar-item-section {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* 鍵盤捷徑說明彈窗 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-main);
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shortcut-key {
+  font-family: var(--font-heading);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shortcut-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.btn-close-modal {
+  width: 100%;
+  background-color: var(--accent-primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+  .app-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  .slides-viewport {
+    padding: 1rem;
+    height: auto;
+    min-height: calc(100vh - 140px);
+  }
+  .slide-wrapper {
+    height: auto;
+    max-height: none;
+  }
+  .slide-card {
+    height: auto;
+    padding: 1.5rem;
+    min-height: 480px;
+  }
+  .layout-title h1 {
+    font-size: 2.2rem;
+  }
+  .layout-title .subtitle {
+    font-size: 1.1rem;
+  }
+  .layout-chapter h2 {
+    font-size: 2rem;
+  }
+  .slide-content h3 {
+    font-size: 1.5rem;
+  }
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .stats-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .progress-container {
+    display: none;
+  }
+  .app-footer {
+    padding: 1rem;
+  }
+  .outline-sidebar {
+    width: 100%;
+    right: -100%;
+    height: calc(100% - 140px);
+  }
+}

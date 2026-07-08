@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="本網頁簡報詳細介紹了由 Google DeepMind 開發的代理型 AI 程式設計助手 Antigravity 的核心功能、運作原理、優勢、規劃模式、工具箱、斜線指令、子代理人等，為程式開發初學者提供無重力的學習與開發體驗。">
+  <meta name="author" content="mchung2022">
+  <title>Antigravity 核心功能與入門指南簡報 - 初學者無重力開發體驗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- 頁首導覽列 -->
+    <header class="app-header">
+      <div class="logo-section">
+        <div class="logo-icon">Ag</div>
+        <span class="logo-text">Antigravity</span>
+        <span class="logo-badge">Beginner Guide</span>
+      </div>
+      <div class="header-controls">
+        <button class="btn-icon" id="btn-theme" title="切換主題">☀️</button>
+        <button class="btn-icon" id="btn-outline" title="開啟投影片大綱 (O鍵)">☰</button>
+        <button class="btn-icon" id="btn-fullscreen" title="全螢幕播放 (F鍵)">⛶</button>
+        <button class="btn-icon" id="btn-help" title="查看快捷鍵幫助 (H鍵)">?</button>
+      </div>
+    </header>
+
+    <!-- 投影片主要播放區 -->
+    <main class="slides-viewport">
+      <div class="slide-wrapper">
+        <article class="slide-card" id="slide-card">
+          <!-- 投影片頂部資訊 (只在非首頁顯示) -->
+          <div class="slide-header" id="slide-header">
+            <span class="slide-section-tag" id="section-tag">認識 Antigravity</span>
+            <span class="slide-index-tag" id="index-tag">01 / 58</span>
+          </div>
+          <!-- 投影片實際內容 -->
+          <div class="slide-content" id="slide-content">
+            <!-- 內容由 JS 動態生成 -->
+          </div>
+        </article>
+      </div>
+
+      <!-- 側邊大綱抽屜 (Outline Sidebar) -->
+      <aside class="outline-sidebar" id="outline-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">
+            <span>投影片目錄大綱</span>
+            <button class="btn-icon" id="btn-close-sidebar" style="width:30px; height:30px;">×</button>
+          </div>
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="search-input" placeholder="搜尋投影片標題或區段...">
+          </div>
+        </div>
+        <ul class="sidebar-list" id="sidebar-list">
+          <!-- 目錄由 JS 動態生成 -->
+        </ul>
+      </aside>
+    </main>
+
+    <!-- 頁尾導覽與進度列 -->
+    <footer class="app-footer">
+      <div class="footer-nav">
+        <button class="btn-nav" id="btn-prev" disabled>
+          <span>←</span> 上一頁
+        </button>
+        <span class="nav-hint">鍵盤 <b>←</b> / <b>→</b> / <b>空白鍵</b> 亦可操控</span>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div class="footer-meta">
+        <span class="section-indicator" id="section-indicator">當前章節：認識 Antigravity</span>
+        <button class="btn-nav" id="btn-next">
+          下一頁 <span>→</span>
+        </button>
+      </div>
+    </footer>
+
+    <!-- 快速鍵幫助彈窗 -->
+    <div class="modal-overlay" id="modal-help">
+      <div class="modal-card">
+        <h3 class="modal-title">⌨️ 鍵盤操控指南</h3>
+        <div class="shortcut-list">
+          <div class="shortcut-row">
+            <span class="shortcut-desc">下一頁投影片</span>
+            <span class="shortcut-key">→ / Space / PageDown</span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">上一頁投影片</span>
+            <span class="shortcut-key">← / PageUp</span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">切換全螢幕模式</span>
+            <span class="shortcut-key">F</span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">切換目錄大綱側邊欄</span>
+            <span class="shortcut-key">O</span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">開關此幫助選單</span>
+            <span class="shortcut-key">H / ? / Esc</span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">投影片切換 (滑鼠)</span>
+            <span class="shortcut-key">滾輪向上/向下</span>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="btn-close-modal">我知道了</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 載入資料與控制指令 -->
+  <script src="slides.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
