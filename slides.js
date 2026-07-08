@@ -9,6 +9,10 @@ const slidesData = [
       <div class="layout-title">
         <h1 style="font-size: 3.2rem;">Antigravity 入門指南</h1>
         <p class="subtitle">用「裝修夢想房子」的白話文，帶你認識 Google DeepMind 開發的 AI 程式設計助手</p>
+        <div class="author-info" style="margin-top: 2.5rem; font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); border-top: 1px solid var(--card-border); padding-top: 1.5rem; width: 300px;">
+          <p>國立臺灣師範大學 鍾明倫</p>
+          <p>2026.07.08</p>
+        </div>
       </div>
     `
   },
