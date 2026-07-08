@@ -372,7 +372,7 @@ const slidesData = [
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>代碼檢查 (Linting)</strong>：自動偵測有沒有漏掉分號、括號不對稱等語法低級錯誤。</li>
         <li><strong>自動建置測試</strong>：確保寫好的代碼在編譯或打包時不會崩潰。</li>
-        <li><strong>Walkthrough 報告</strong>：在全部完成後，它會自動生成一份精美的 `walkthrough.md`，圖文並茂地展示它做了哪些修改、測試的結果，讓你一目了然。</li>
+        <li><strong>Walkthrough 報告</strong>：在全部完成後，它會自動生成一份精美的 <code>walkthrough.md</code>，圖文並茂地展示它做了哪些修改、測試的結果，讓你一目了然。</li>
       </ul>
     `
   },
@@ -484,8 +484,8 @@ const slidesData = [
       <h3>階段一：研究調查 (Research)</h3>
       <p class="intro-text">當你說：<i>「幫我修復購物車結帳時，折扣金額計算錯誤的 Bug。」</i>，AI 不會馬上改代碼，它會先扮演偵探：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>搜尋關鍵字</strong>：使用 `grep_search` 在專案內搜尋 "checkout", "discount", "cart" 等關鍵字。</li>
-        <li><strong>研讀關聯檔案</strong>：使用 `view_file` 查閱相關檔案（例如：cart_service.py、payment_controller.py）。</li>
+        <li><strong>搜尋關鍵字</strong>：使用 <code>grep_search</code> 在專案內搜尋 "checkout", "discount", "cart" 等關鍵字。</li>
+        <li><strong>研讀關聯檔案</strong>：使用 <code>view_file</code> 查閱相關檔案（例如：cart_service.py、payment_controller.py）。</li>
         <li><strong>不進行破壞性操作</strong>：此階段完全是<b>「唯讀」(Read-Only)</b> 的。它不會去寫入或更改任何檔案，也不會執行任何可能更改系統狀態的指令。</li>
         <li><strong>找出病灶</strong>：確認計算公式的錯誤所在（例如：少乘了折價券的百分比）。</li>
       </ul>
@@ -503,7 +503,7 @@ const slidesData = [
           <p class="intro-text">研究完畢後，Antigravity 會產出一份 Markdown 格式的計畫書，路徑固定在專案內部的隱藏目錄下。</p>
           <ul class="bullet-list">
             <li><strong>列出修改目標</strong>：清楚告訴你它會動到哪些檔案。</li>
-            <li><strong>標明修改動作</strong>：使用 `[MODIFY]`、`[NEW]`、`[DELETE]` 來標記新增或修改。</li>
+            <li><strong>標明修改動作</strong>：使用 <code>[MODIFY]</code>、<code>[NEW]</code>、<code>[DELETE]</code> 來標記新增或修改。</li>
             <li><strong>說明驗證方法</strong>：它會用什麼指令來證明修改是正確的（例如跑哪一個測試檔案）。</li>
           </ul>
         </div>
@@ -535,7 +535,7 @@ const slidesData = [
 
 ## 預計修改項目
 ### [MODIFY] [cart_service.py](file:///path/to/cart_service.py)
-- 修改 `calculate_total` 函式，確保在計算折扣 (discount) 時，金額不會變成負數。
+- 修改 <code>calculate_total</code> 函式，確保在計算折扣 (discount) 時，金額不會變成負數。
 
 ## 驗證計畫
 ### 自動測試
@@ -581,11 +581,11 @@ const slidesData = [
       <div class="split-layout">
         <div class="split-left">
           <h3>階段四：任務執行與追蹤</h3>
-          <p class="intro-text">你按下「同意」後，Antigravity 會自動建立一個任務清單檔案 `task.md`，並開始大刀闊斧地改代碼。</p>
+          <p class="intro-text">你按下「同意」後，Antigravity 會自動建立一個任務清單檔案 <code>task.md</code>，並開始大刀闊斧地改代碼。</p>
           <ul class="bullet-list">
             <li><strong>進度追蹤 (task.md)</strong>：將大任務拆解成很多個 TODO。</li>
-            <li><strong>實行修改</strong>：使用 `replace_file_content` 或 `multi_replace_file_content` 進行精準修改。</li>
-            <li><strong>即時打勾</strong>：完成一項就在 `task.md` 裡標記 `[x]`，正在做的標記 `[/]`。你可以隨時打開這個檔案看進度。</li>
+            <li><strong>實行修改</strong>：使用 <code>replace_file_content</code> 或 <code>multi_replace_file_content</code> 進行精準修改。</li>
+            <li><strong>即時打勾</strong>：完成一項就在 <code>task.md</code> 裡標記 <code>[x]</code>，正在做的標記 <code>[/]</code>。你可以隨時打開這個檔案看進度。</li>
           </ul>
         </div>
         <div class="split-right">
@@ -614,10 +614,10 @@ const slidesData = [
       <h3>階段五：品質驗證與成果報告</h3>
       <p class="intro-text">代碼寫完了，任務就算結束了嗎？在 Antigravity 中還沒！它會完成最重要的一哩路：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>自動跑測試</strong>：依據計畫書中的驗證計畫，執行測試指令（例如跑 `pytest` 或 `npm test`）。</li>
+        <li><strong>自動跑測試</strong>：依據計畫書中的驗證計畫，執行測試指令（例如跑 <code>pytest</code> 或 <code>npm test</code>）。</li>
         <li><strong>驗證失敗處理</strong>：如果跑測試時發現紅字 (Bug)，觸發 Self-healing 機制，自動去把剛剛改壞的 code 修好。</li>
-        <li><strong>撰寫 Walkthrough 報告</strong>：測試完全綠燈通過後，AI 會撰寫 `walkthrough.md` 成果報告，說明它最後究竟改了哪些地方、測試結果是什麼。</li>
-        <li><strong>提交覆核</strong>：你看完 `walkthrough.md` 確定沒問題後，任務才算完美落地！</li>
+        <li><strong>撰寫 Walkthrough 報告</strong>：測試完全綠燈通過後，AI 會撰寫 <code>walkthrough.md</code> 成果報告，說明它最後究竟改了哪些地方、測試結果是什麼。</li>
+        <li><strong>提交覆核</strong>：你看完 <code>walkthrough.md</code> 確定沒問題後，任務才算完美落地！</li>
       </ul>
     `
   },
@@ -660,11 +660,11 @@ const slidesData = [
       <h3>超能力工具箱概覽</h3>
       <p class="intro-text">Antigravity 之所以強大，是因為它能調用一系列由系統安全控管的 API 工具。這些工具大致分為五大類：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>檔案讀寫工具</strong>：如 `view_file`, `write_to_file`, `replace_file_content`（精準代碼置換）。</li>
-        <li><strong>搜尋檢索工具</strong>：如 `grep_search`（在成千上萬行程式中快速定位）。</li>
-        <li><strong>系統執行工具</strong>：如 `run_command`（在電腦的 Shell 裡執行任何命令）。</li>
-        <li><strong>網頁瀏覽與外部工具</strong>：如 `search_web`, `read_url_content`（取得線上即時文件）。</li>
-        <li><strong>定時與管理工具</strong>：如 `schedule`（背景排程工作）、`manage_subagents`（管理子代理人）。</li>
+        <li><strong>檔案讀寫工具</strong>：如 <code>view_file</code>, <code>write_to_file</code>, <code>replace_file_content</code>（精準代碼置換）。</li>
+        <li><strong>搜尋檢索工具</strong>：如 <code>grep_search</code>（在成千上萬行程式中快速定位）。</li>
+        <li><strong>系統執行工具</strong>：如 <code>run_command</code>（在電腦的 Shell 裡執行任何命令）。</li>
+        <li><strong>網頁瀏覽與外部工具</strong>：如 <code>search_web</code>, <code>read_url_content</code>（取得線上即時文件）。</li>
+        <li><strong>定時與管理工具</strong>：如 <code>schedule</code>（背景排程工作）、<code>manage_subagents</code>（管理子代理人）。</li>
       </ul>
     `
   },
@@ -712,11 +712,11 @@ ReplacementContent:
     title: "全域檢索利器：grep_search",
     contentHtml: `
       <h3>全域檢索利器：grep_search</h3>
-      <p class="intro-text">當專案很大，有幾百個資料夾跟幾千個檔案時，人腦根本記不住某個函式定義在哪裡。這時候 AI 會召喚 `grep_search`：</p>
+      <p class="intro-text">當專案很大，有幾百個資料夾跟幾千個檔案時，人腦根本記不住某個函式定義在哪裡。這時候 AI 會召喚 <code>grep_search</code>：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>快如閃電</strong>：底層使用 Ripgrep 技術，在零點幾秒內掃描整個專案。</li>
         <li><strong>精確定位</strong>：它不僅能找出哪些檔案包含關鍵字，還能回傳確切的<b>行號 (Line Number)</b>與<b>該行內容</b>。</li>
-        <li><strong>過濾雜訊</strong>：能指定只搜尋特定的檔案格式（如 `*.py`）或排除特定目錄（如排除 `node_modules`），防止垃圾資訊干擾 AI 決策。</li>
+        <li><strong>過濾雜訊</strong>：能指定只搜尋特定的檔案格式（如 <code>*.py</code>）或排除特定目錄（如排除 <code>node_modules</code>），防止垃圾資訊干擾 AI 決策。</li>
       </ul>
       <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
         💡 對初學者而言，這免去了在 VS Code 側邊欄一個個檔案慢慢點開的痛苦。
@@ -734,16 +734,16 @@ ReplacementContent:
           <h3>終端機指揮官：run_command</h3>
           <p class="intro-text">這是 AI 最強大的「手」。它可以在你本機的環境（Windows 上的 PowerShell）下達終端機指令。</p>
           <ul class="bullet-list">
-            <li><strong>自動化命令</strong>：自動執行 `npm install`、`python main.py`、`git commit` 等。</li>
-            <li><strong>非同步執行與背景任務</strong>：如果是一個需要一直跑的伺服器（例如 `npm run dev`），它會把它送到背景，並用定時任務監控狀態。</li>
-            <li><strong>極致安全保護</strong>：<b>「不准 CD 命令」</b>！系統禁止 AI 執行 `cd` 改目錄，以防路徑混亂。</li>
+            <li><strong>自動化命令</strong>：自動執行 <code>npm install</code>、<code>python main.py</code>、<code>git commit</code> 等。</li>
+            <li><strong>非同步執行與背景任務</strong>：如果是一個需要一直跑的伺服器（例如 <code>npm run dev</code>），它會把它送到背景，並用定時任務監控狀態。</li>
+            <li><strong>極致安全保護</strong>：<b>「不准 CD 命令」</b>！系統禁止 AI 執行 <code>cd</code> 改目錄，以防路徑混亂。</li>
           </ul>
         </div>
         <div class="split-right">
           <div class="info-card" style="background-color: rgba(239, 68, 68, 0.1); border-color: #ef4444; width: 100%;">
             <h4 style="color: #ef4444;"><span class="card-icon">⚠️</span> 安全鐵律</h4>
             <p style="font-size: 0.85rem; line-height: 1.5;">
-              為了防止惡意代碼損壞你的電腦，任何 `run_command` 的調用<b>都必須經過你（使用者）的點擊授權</b>。AI 絕對無法偷偷背著你執行危險的指令。
+              為了防止惡意代碼損壞你的電腦，任何 <code>run_command</code> 的調用<b>都必須經過你（使用者）的點擊授權</b>。AI 絕對無法偷偷背著你執行危險的指令。
             </p>
           </div>
         </div>
@@ -777,7 +777,7 @@ ReplacementContent:
           <p class="intro-text">在開發網頁前端或設計 App 時，你可能常常需要「放一張示意圖」或「設計一個精美的按鈕與 Layout」。</p>
           <ul class="bullet-list">
             <li><strong>拒絕預留占位符 (No Placeholders)</strong>：Antigravity 開發規範要求不使用無聊的假圖片。</li>
-            <li><strong>自主生成設計稿</strong>：呼叫 `generate_image` 繪製網頁 UI Mockup、Logo，或是精美的產品示意圖。</li>
+            <li><strong>自主生成設計稿</strong>：呼叫 <code>generate_image</code> 繪製網頁 UI Mockup、Logo，或是精美的產品示意圖。</li>
             <li><strong>迭代美化</strong>：AI 會根據你的回饋，傳入原圖進行局部修改，直到 UI 達到企業級的高級感。</li>
           </ul>
         </div>
@@ -803,7 +803,7 @@ ReplacementContent:
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>告別無效等待</strong>：AI 不需要一直發指令「Sleep」，這會浪費大量額度與系統資源。</li>
         <li><strong>One-shot Timer (一次性計時器)</strong>：AI 可以定一個「3分鐘後叫醒我」的計時器，然後暫時休眠，時間一到系統會自動發送通知喚醒 AI 來檢查結果。</li>
-        <li><strong>Recurring Cron (循環任務)</strong>：使用標準的 Cron 表達式（例如 `*/5 * * * *`），讓 AI 每五分鐘自動起床巡檢你的服務狀態。</li>
+        <li><strong>Recurring Cron (循環任務)</strong>：使用標準的 Cron 表達式（例如 <code>*/5 * * * *</code>），讓 AI 每五分鐘自動起床巡檢你的服務狀態。</li>
       </ul>
     `
   },
@@ -818,9 +818,9 @@ ReplacementContent:
           <h3>安全鐵閘：權限管理</h3>
           <p class="intro-text">安全永遠是第一考量。系統內建了嚴密的權限清單來限制 AI 的行為：</p>
           <ul class="bullet-list">
-            <li><strong>唯讀免申報</strong>：讀取一般程式碼檔案 (`read_file`) 預設是允許的，這樣 AI 才能快速了解專案。</li>
-            <li><strong>修改需核准</strong>：寫入重要系統設定、執行系統指令 (`command`)，一律會跳出提示請求使用者授權。</li>
-            <li><strong>黑名單機制 (Denied)</strong>：極敏感的安全路徑（如 `.git` 憑證、金鑰金庫檔）會直接被系統 Denied，AI 連碰都碰不到。</li>
+            <li><strong>唯讀免申報</strong>：讀取一般程式碼檔案 (<code>read_file</code>) 預設是允許的，這樣 AI 才能快速了解專案。</li>
+            <li><strong>修改需核准</strong>：寫入重要系統設定、執行系統指令 (<code>command</code>)，一律會跳出提示請求使用者授權。</li>
+            <li><strong>黑名單機制 (Denied)</strong>：極敏感的安全路徑（如 <code>.git</code> 憑證、金鑰金庫檔）會直接被系統 Denied，AI 連碰都碰不到。</li>
           </ul>
         </div>
         <div class="split-right">
@@ -875,7 +875,7 @@ ReplacementContent:
       <div class="split-layout">
         <div class="split-left">
           <h3>/goal：永不放棄的奮鬥模式</h3>
-          <p class="intro-text">當你手上有一個非常艱鉅、需要反覆除錯、甚至需要跑上一整晚的超大任務時，使用 `/goal`：</p>
+          <p class="intro-text">當你手上有一個非常艱鉅、需要反覆除錯、甚至需要跑上一整晚的超大任務時，使用 <code>/goal</code>：</p>
           <ul class="bullet-list">
             <li><strong>自動化循環</strong>：AI 會自動拆解步驟，做完一步接著做下一步，不需要你一直給它按 Proceed。</li>
             <li><strong>頑強的除錯毅力</strong>：遇到錯誤會自動研究、自動修改、自動重跑，直到達成目標。</li>
@@ -928,7 +928,7 @@ ReplacementContent:
       <div class="split-layout">
         <div class="split-left">
           <h3>/browser：視覺化網頁除錯</h3>
-          <p class="intro-text">很多寫網頁的 Bug，只看代碼是找不出來的（例如：按鈕點了沒反應、畫面跑版）。`/browser` 指令：</p>
+          <p class="intro-text">很多寫網頁的 Bug，只看代碼是找不出來的（例如：按鈕點了沒反應、畫面跑版）。<code>/browser</code> 指令：</p>
           <ul class="bullet-list">
             <li><strong>啟動無頭瀏覽器 (Chrome)</strong>：讓 AI 在背景打開瀏覽器，直接載入你寫好的網頁。</li>
             <li><strong>模擬真實使用者</strong>：AI 會自動模擬使用者點擊、填寫表單、捲動頁面。</li>
@@ -1014,7 +1014,7 @@ ReplacementContent:
           <h3>/learn：個人化記憶引擎</h3>
           <p class="intro-text">如果每次開啟新對話，都要重新告訴 AI「我喜歡用 TailwindCSS」、「我的伺服器埠號是 8080」，那就太蠢了。</p>
           <ul class="bullet-list">
-            <li><strong>永久儲存偏好</strong>：當你糾正了 AI 的某個習慣，或者解決了一個複雜的環境設定後，輸入 `/learn`。</li>
+            <li><strong>永久儲存偏好</strong>：當你糾正了 AI 的某個習慣，或者解決了一個複雜的環境設定後，輸入 <code>/learn</code>。</li>
             <li><strong>寫入設定檔</strong>：AI 會將這個知識寫入專案的客製化設定中。</li>
             <li><strong>越用越懂你</strong>：下一次它會自動套用這些偏好，成為最懂你開發習慣的靈魂伴侶。</li>
           </ul>
@@ -1079,9 +1079,9 @@ ReplacementContent:
     title: "內建子代理人 1：research (代碼研究專家)",
     contentHtml: `
       <h3>代碼研究專家：research</h3>
-      <p class="intro-text">專案檔案太多、架構太亂？主代理人隨時可以派它的得力助手 `research` 登場：</p>
+      <p class="intro-text">專案檔案太多、架構太亂？主代理人隨時可以派它的得力助手 <code>research</code> 登場：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>唯讀探索權限</strong>：`research` 子代理人被配置了「唯讀」工具，它只能查代碼、搜網頁、讀文件，絕對沒有權限修改你的任何檔案，百分之百安全。</li>
+        <li><strong>唯讀探索權限</strong>：<code>research</code> 子代理人被配置了「唯讀」工具，它只能查代碼、搜網頁、讀文件，絕對沒有權限修改你的任何檔案，百分之百安全。</li>
         <li><strong>背景默默耕耘</strong>：當你在前台確認 UI 版面時，它正在背景幫你閱讀幾萬行的 legacy 代碼邏輯。</li>
         <li><strong>產出精華報告</strong>：完成後，它會回報給主代理人一份結構清晰的「分析報告」，告訴主代理人修改哪幾個檔案最合適。</li>
       </ul>
@@ -1096,7 +1096,7 @@ ReplacementContent:
       <h3>複製另一個自己：self</h3>
       <p class="intro-text">當主代理人手頭的工作卡住，需要跳出去驗證一個完全不相關的想法，但又不想破壞當前對話上下文時：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
-        <li><strong>完整的自己</strong>：`self` 子代理人會全數繼承主代理人所有的系統提示詞、工具操作權限、以及模型配置。</li>
+        <li><strong>完整的自己</strong>：<code>self</code> 子代理人會全數繼承主代理人所有的系統提示詞、工具操作權限、以及模型配置。</li>
         <li><strong>分支實驗室</strong>：它就像是開了一個沙盒分支，在裡面任意安裝套件、下指令測試，完全不會弄髒主代理人正在進行的程式碼實作。</li>
         <li><strong>驗證成功再合併</strong>：在分支測試成功後，把成功的方案回報給主代理人，主代理人再將其應用到主程式中。</li>
       </ul>
@@ -1143,11 +1143,11 @@ SystemPrompt: "你是一個資料庫調優專家。
     title: "代理人間的溝通橋樑：send_message",
     contentHtml: `
       <h3>代理人間的通訊網路：send_message</h3>
-      <p class="intro-text">多代理人系統中，AI 彼此之間是怎麼說話的？他們使用專用的 `send_message` 工具：</p>
+      <p class="intro-text">多代理人系統中，AI 彼此之間是怎麼說話的？他們使用專用的 <code>send_message</code> 工具：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>不吵到人類</strong>：子代理人彼此之間的頻繁交流、發送代碼片段、討論除錯方案，都是在背景默默進行的，不會瘋狂洗版你的聊天視窗。</li>
         <li><strong>進度匯報</strong>：一旦有了關鍵性的結論，主代理人會整理成人類看得懂的繁體中文，在聊天視窗向你做大匯報。</li>
-        <li><strong>主動喚醒機制</strong>：當子代理人在背景跑完任務發送 `send_message` 給主代理人時，系統會自動喚醒主代理人處理，不需要你手動去重新載入頁面或一直盯著進度。</li>
+        <li><strong>主動喚醒機制</strong>：當子代理人在背景跑完任務發送 <code>send_message</code> 給主代理人時，系統會自動喚醒主代理人處理，不需要你手動去重新載入頁面或一直盯著進度。</li>
       </ul>
     `
   },
@@ -1177,7 +1177,7 @@ SystemPrompt: "你是一個資料庫調優專家。
           <h3>馴服 AI：自訂技能與規則</h3>
           <p class="intro-text">不同專案有不同的寫法，如果你不給 AI 設限，它可能會用它自己的偏好亂寫。Antigravity 提供兩種層級的客製化：</p>
           <ul class="bullet-list">
-            <li><strong>專案規則 (Rules)</strong>：約束 AI 的行為規範，例如「一定要寫單元測試」、「變數命名方式」。寫在 `AGENTS.md` 檔案中。</li>
+            <li><strong>專案規則 (Rules)</strong>：約束 AI 的行為規範，例如「一定要寫單元測試」、「變數命名方式」。寫在 <code>AGENTS.md</code> 檔案中。</li>
             <li><strong>自訂技能 (Skills)</strong>：教導 AI 原本不會的絕招，例如操作某個特別的硬體設備或內部開發的私有 API。</li>
           </ul>
         </div>
@@ -1229,11 +1229,11 @@ description: "清理專案中多餘的 console.log 偵錯代碼"
     title: "專案規則 (Rules)：強制約束 AI 的行為",
     contentHtml: `
       <h3>專案規則 (Rules) 的無上權威</h3>
-      <p class="intro-text">在 `.agents/AGENTS.md` (或全域設定中的 AGENTS.md) 裡，你可以用 Markdown 條列式寫下你的底線規矩：</p>
+      <p class="intro-text">在 <code>.agents/AGENTS.md</code> (或全域設定中的 AGENTS.md) 裡，你可以用 Markdown 條列式寫下你的底線規矩：</p>
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>寫作風格</strong>：例如「所有註解必須是繁體中文」、「採用 2 個空格縮排」。</li>
-        <li><strong>排除路徑</strong>：例如「嚴禁讀取或修改 `data/sensitive/` 資料夾下的任何檔案」。</li>
-        <li><strong>架構規範</strong>：例如「新增路由時，一律要在 `routes/index.js` 裡進行註冊」。</li>
+        <li><strong>排除路徑</strong>：例如「嚴禁讀取或修改 <code>data/sensitive/</code> 資料夾下的任何檔案」。</li>
+        <li><strong>架構規範</strong>：例如「新增路由時，一律要在 <code>routes/index.js</code> 裡進行註冊」。</li>
         <li><strong>AI 絕對服從</strong>：Antigravity 在每次思考前都會優先加載這份檔案，它會把這份文件視為至高無上的法律，絕不違背。</li>
       </ul>
     `
@@ -1264,7 +1264,7 @@ description: "清理專案中多餘的 console.log 偵錯代碼"
       <ul class="bullet-list" style="margin-top: 1.5rem;">
         <li><strong>金律 1：大任務拆成小步驟</strong>。不要一次叫它寫「一整個購物商城」，先叫它「設計商品列表的 API」，一步步來最穩健。</li>
         <li><strong>金律 2：認真審查計畫書</strong>。在點選「同意 (Proceed)」前，花 30 秒確認它預計要改的檔案和你的想法一致。</li>
-        <li><strong>金律 3：充分利用 /grill-me</strong>。如果你對功能需求還有些模糊，輸入 `/grill-me` 讓 AI 主動幫你釐清盲點。</li>
+        <li><strong>金律 3：充分利用 /grill-me</strong>。如果你對功能需求還有些模糊，輸入 <code>/grill-me</code> 讓 AI 主動幫你釐清盲點。</li>
         <li><strong>金律 4：善用 /learn 記錄偏好</strong>。把每次解決環境問題、或是調整風格的結論記錄下來，讓 AI 越來越懂你。</li>
         <li><strong>金律 5：不要害怕錯誤</strong>。AI 有強大的 Self-healing 機制，放手讓它去跑測試、除錯，它是個越錯越勇的戰士！</li>
       </ul>
@@ -1283,14 +1283,14 @@ description: "清理專案中多餘的 console.log 偵錯代碼"
           <ul class="bullet-list">
             <li><strong>方法 1：打斷重新引導</strong>。直接在聊天室輸入「等等，這個寫法不對，我們重新想一個更簡單的方案」，讓它更新計畫書。</li>
             <li><strong>方法 2：手動干預修改</strong>。你可以自己動手把那行寫錯的程式改掉，AI 在下一步讀取檔案時會自動發現你的修改並配合你。</li>
-            <li><strong>方法 3：善用 git 還原</strong>。因為專案有 Git 版本控制，隨時可以 `git checkout .` 退回修改前狀態。</li>
+            <li><strong>方法 3：善用 git 還原</strong>。因為專案有 Git 版本控制，隨時可以 <code>git checkout .</code> 退回修改前狀態。</li>
           </ul>
         </div>
         <div class="split-right">
           <div class="info-card" style="background-color: var(--accent-glow); border-color: var(--accent-primary); width: 100%;">
             <h4><span class="card-icon">⚡</span> 偵錯小撇步</h4>
             <p style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.5rem;">
-              當遇到棘手 Bug，可以自己動手寫一個簡單的 `debug.js` 放在 scratch 資料夾下測試，再把結果直接貼給 AI 看。
+              當遇到棘手 Bug，可以自己動手寫一個簡單的 <code>debug.js</code> 放在 scratch 資料夾下測試，再把結果直接貼給 AI 看。
             </p>
           </div>
         </div>
